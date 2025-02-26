@@ -1,0 +1,141 @@
+/* General styling for the chat container */
+.chat-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message-text {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+}
+
+.user-message .message-text {
+  background-color: #d1e7dd;
+  text-align: right;
+}
+
+.bot-message .message-text {
+  background-color: #f8d7da;
+  text-align: left;
+}
+
+/* Styling for input container and buttons */
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 510px;
+  max-height: 80px;
+}
+
+.input-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-bottom: 10px; /* You can remove this if not needed */
+}
+
+.switch-container {
+  width: 60px;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-button {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  transition: transform 0.3s ease;
+}
+
+.switch-container.en-active .switch-button {
+  transform: translateX(0);
+}
+
+.switch-container.he-active .switch-button {
+  transform: translateX(30px);
+}
+
+.language-label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+/* Circle button */
+.circle-container {
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9E9E9E;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle-listening {
+  background-color: #4CAF50;
+  transform: scale(1.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.circle-talking {
+  background-color: #FF5722;
+  transform: scale(1.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.circle-stopped {
+  background-color: #9E9E9E;
+  transform: scale(1);
+  box-shadow: none;
+}

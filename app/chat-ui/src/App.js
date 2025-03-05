@@ -122,6 +122,10 @@ function App() {
     }
   };
 
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+  
   return (
     <div className="chat-container">
       <div className="chat-box">

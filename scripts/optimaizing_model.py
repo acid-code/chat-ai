@@ -1,8 +1,14 @@
 from optimum.intel import IncQuantizer
 from transformers import AutoModelForCausalLM
 from huggingface_hub import login
+import os
+from dotenv import load_dotenv
 
-hugging_face_token = "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"
+# Load the .env file
+load_dotenv()
+
+
+hugging_face_token = os.getenv("HF_TOKEN", "hf_i")
 
 
 login(hugging_face_token)

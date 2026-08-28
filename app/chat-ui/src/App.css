@@ -37,6 +37,7 @@
 
 .message-text {
   font-size: 14px; /* Adjust the font size for chat messages */
+  white-space: pre-wrap;
 }
 
 .input-container {

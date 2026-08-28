@@ -5,7 +5,12 @@ import torch
 import os
 from peft import LoraConfig, get_peft_model
 from accelerate import Accelerator
+from dotenv import load_dotenv
 
+# Load the .env file
+load_dotenv()
+
+AUTH_TOKEN = os.getenv("HF_TOKEN", None)
 # Load dataset
 dataset = load_dataset(
     "Shenlab/MentalChat16K", split="train[:700]"
@@ -121,9 +126,5 @@ trainer.train(resume_from_checkpoint=last_checkpoint)
 model.save_pretrained("models/finetuned_tinyllama")
 tokenizer.save_pretrained("models/finetuned_tinyllama")
 
-model.push_to_hub(
-    "finetuned_tinyllama", use_auth_token="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"
-)
-tokenizer.push_to_hub(
-    "finetuned_tinyllama", use_auth_token="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"
-)
+model.push_to_hub("finetuned_tinyllama", use_auth_token=AUTH_TOKEN)
+tokenizer.push_to_hub("finetuned_tinyllama", use_auth_token=AUTH_TOKEN)
